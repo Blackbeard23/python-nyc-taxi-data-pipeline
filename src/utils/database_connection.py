@@ -1,9 +1,8 @@
-from dotenv import load_dotenv
 import os
-import psycopg2
-from sqlalchemy import create_engine, text
-from sqlalchemy.engine import Connection
 from pathlib import Path
+from dotenv import load_dotenv
+import psycopg2
+
 
 load_dotenv()
 
@@ -13,9 +12,10 @@ port = os.getenv('PORT')
 password = os.getenv('PASSWORD')
 db_name = os.getenv('DBNAME').lower()
 
+
 def db_connection():
-    # engine = create_engine(f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{db_name}")
-    # return engine.connect()
+    """ create database connection.
+    """
     conn = psycopg2.connect(
         database=db_name,
         host=host,
@@ -61,12 +61,16 @@ def terminate_db_connections():
 
 
 def get_sql_file_text(file_name: str) -> str:
+    """convert .sql file to readable text file
+        to execute as sql statement
+    """
     file_path = Path(__file__).resolve().parent.parent
     sql_path = file_path / "sql" / file_name
     return sql_path
 
 
 def run_sql_file(path: Path, cursor):
+    """ Helps to run .sql file
+    """
     sql_text = path.read_text(encoding='utf-8')
     cursor.execute(sql_text)
- 

@@ -237,3 +237,48 @@ DETAIL:  Key (ratecodeid)=(1) already exists.
                     
 2025-11-14 17:16:46,433 - INFO - ✅✅✅ Aggregation layer model completed.
 2025-11-14 17:16:46,433 - INFO - 🎊🎉🎊 Pipeline ran successfully
+2025-11-14 22:19:22,884 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-14 22:19:41,082 - INFO - read_parquet: 18.2 seconds, rows=2,964,624
+2025-11-14 22:19:41,155 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 22:20:38,774 - INFO -   COPY into raw_stage: 20.7 seconds
+2025-11-14 22:20:38,777 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 22:20:53,617 - INFO -   Procedure runtime (including SQL work): 14.8 seconds
+2025-11-14 22:20:53,617 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01 
+ Total Ingestion runtime: 90.7
+2025-11-14 22:20:53,799 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-14 22:22:05,035 - INFO - read_parquet: 71.2 seconds, rows=3,007,526
+2025-11-14 22:22:05,130 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 22:23:07,190 - INFO -   COPY into raw_stage: 22.3 seconds
+2025-11-14 22:23:07,190 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 22:24:01,582 - INFO -   Procedure runtime (including SQL work): 54.4 seconds
+2025-11-14 22:24:01,583 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02 
+ Total Ingestion runtime: 187.8
+2025-11-14 22:24:01,784 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-03.parquet
+2025-11-14 22:24:14,412 - INFO - read_parquet: 12.6 seconds, rows=3,582,628
+2025-11-14 22:24:14,424 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 22:25:32,331 - INFO -   COPY into raw_stage: 28.4 seconds
+2025-11-14 22:25:32,332 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 22:26:41,262 - INFO -   Procedure runtime (including SQL work): 68.9 seconds
+2025-11-14 22:26:41,262 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-03 
+ Total Ingestion runtime: 159.5
+2025-11-14 22:26:41,491 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-04.parquet
+2025-11-14 22:26:54,423 - INFO - read_parquet: 12.9 seconds, rows=3,514,289
+2025-11-14 22:26:54,444 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 22:28:15,335 - INFO -   COPY into raw_stage: 27.6 seconds
+2025-11-14 22:28:15,336 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 22:29:29,445 - INFO -   Procedure runtime (including SQL work): 74.1 seconds
+2025-11-14 22:29:29,445 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-04 
+ Total Ingestion runtime: 168.0
+2025-11-14 22:29:29,653 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-05.parquet
+2025-11-14 22:30:31,873 - INFO - read_parquet: 62.2 seconds, rows=3,723,833
+2025-11-14 22:30:31,893 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 22:31:58,663 - INFO -   COPY into raw_stage: 32.7 seconds
+2025-11-14 22:31:58,664 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 22:33:22,141 - INFO -   Procedure runtime (including SQL work): 83.5 seconds
+2025-11-14 22:33:22,142 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-05 
+ Total Ingestion runtime: 232.5
+2025-11-14 22:34:59,672 - INFO - ✅✅✅ SILVER layer transformation completed: raw Bronze trips normalized into relational tables.
+                    derived features calculated, and values standardized for downstream Gold models.
+                    
+2025-11-14 22:34:59,709 - INFO - ✅✅✅ Aggregation layer model completed.
+2025-11-14 22:34:59,709 - INFO - 🎊🎉🎊 Pipeline ran successfully

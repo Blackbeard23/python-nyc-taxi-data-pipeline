@@ -1,32 +1,13 @@
-from dotenv import load_dotenv
+# from pathlib import Path
 import os
+from dotenv import load_dotenv
 import psycopg2
-import logging
-from pathlib import Path
+from utils import custom_logging, run_sql_file, get_sql_file_text
 from utils import terminate_db_connections
 
-# ---------------------------------
 # Logging setup
-# ---------------------------------
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-logger.propagate = False
+logger = custom_logging('logs/db_setup.log')
 
-logger.handlers.clear()
-
-formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
-
-# Make sure logs directory exists
-os.makedirs("logs", exist_ok=True)
-
-console_handler = logging.StreamHandler()
-file_handler = logging.FileHandler("logs/db_setup.log", encoding="utf-8")
-
-console_handler.setFormatter(formatter)
-file_handler.setFormatter(formatter)
-
-logger.addHandler(console_handler)
-logger.addHandler(file_handler)
 
 # ---------------------------------
 # Env + basic DB config
@@ -37,9 +18,10 @@ host = os.getenv("HOST")
 user = os.getenv("USER")
 port = os.getenv("PORT")
 password = os.getenv("PASSWORD")
-db_name = os.getenv("DBNAME").lower()  # e.g. NYC_TAXI_2024_PY -> nyc_taxi_2024_py
+db_name = os.getenv("DBNAME").lower()
 
 terminate_db_connections()
+
 
 def database_connection(host, port, user, password, db=None):
     """
@@ -58,10 +40,10 @@ def database_connection(host, port, user, password, db=None):
     return cursor, conn
 
 
-def run_sql_file(path: Path, cursor) -> None:
-    """Read a .sql file and execute its contents using a psycopg2 cursor."""
-    sql = path.read_text(encoding="utf-8")
-    cursor.execute(sql)
+# def run_sql_file(path: Path, cursor) -> None:
+#     """Read a .sql file and execute its contents using a psycopg2 cursor."""
+#     sql = path.read_text(encoding="utf-8")
+#     cursor.execute(sql)
 
 
 def main() -> None:
@@ -74,7 +56,7 @@ def main() -> None:
         )
 
         # Drop/create using the env DBNAME (unquoted -> folded to lowercase)
-        admin_cur.execute(f"DROP DATABASE IF EXISTS {db_name}")
+        admin_cur.execute(f"DROP DATABASE IF EXISTS {db_name} WITH (FORCE)")
         admin_cur.execute(f"CREATE DATABASE {db_name}")
         logger.info("✅ Database %s was created successfully", db_name)
 
@@ -303,8 +285,9 @@ def main() -> None:
         # 7. Apply stored procedure from src/sql/bronze_incremental_load.sql
         # -----------------------------
         # db_setup.py is in src/, so parent is src/
-        src_dir = Path(__file__).resolve().parent
-        sql_file = src_dir / "sql" / "bronze_incremental_load.sql"
+        # src_dir = Path(__file__).resolve().parent
+        # sql_file = src_dir / "sql" / "bronze_incremental_load.sql"
+        sql_file = get_sql_file_text('bronze_incremental_load.sql')
 
         logger.info("Applying stored procedure from %s", sql_file)
         run_sql_file(sql_file, db_cur)

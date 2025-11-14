@@ -1,7 +1,10 @@
 import logging
 import os
 
+
 def custom_logging(log_file: str):
+    """ Custom logging to a file and console
+    """
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.DEBUG)
     logger.propagate = False

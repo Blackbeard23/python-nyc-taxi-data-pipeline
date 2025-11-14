@@ -1,5 +1,5 @@
 from utils import *
-from incremental_ingestion import *
+from incremental_ingestion import incremental_data_ingestion
 from silver_gold_etl import *
 import time
 

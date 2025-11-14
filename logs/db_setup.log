@@ -98,3 +98,25 @@ DETAIL:  There are 4 other sessions using the database.
 2025-11-14 12:45:05,579 - INFO - Applying stored procedure from C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\sql\bronze_incremental_load.sql
 2025-11-14 12:45:05,583 - INFO - ✅ bronze.incremental_load created/updated successfully.
 2025-11-14 12:45:05,583 - INFO - ✅✅✅ DATABASE SETUP COMPLETED
+2025-11-14 21:36:21,899 - ERROR - Error during DB setup: cannot drop the currently open database
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\db_setup.py", line 62, in main
+    admin_cur.execute(f"DROP DATABASE IF EXISTS {db_name}")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.ObjectInUse: cannot drop the currently open database
+
+2025-11-14 21:41:20,847 - ERROR - Error during DB setup: cannot drop the currently open database
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\db_setup.py", line 61, in main
+    admin_cur.execute(f"DROP DATABASE IF EXISTS {db_name} WITH (FORCE)")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.ObjectInUse: cannot drop the currently open database
+
+2025-11-14 21:44:54,342 - INFO - ✅ Database nyc_taxi_2024_py was created successfully
+2025-11-14 21:44:54,463 - INFO - ✅ BRONZE schema and layer were created successfully
+2025-11-14 21:44:54,485 - INFO - ✅ META schema and layers were created successfully
+2025-11-14 21:44:54,563 - INFO - ✅ SILVER table partitions were created successfully
+2025-11-14 21:44:54,564 - INFO - ✅ GOLD schema and layer were created successfully
+2025-11-14 21:44:54,565 - INFO - Applying stored procedure from C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\sql\bronze_incremental_load.sql
+2025-11-14 21:44:54,592 - INFO - ✅ bronze.incremental_load created/updated successfully.
+2025-11-14 21:44:54,592 - INFO - ✅✅✅ DATABASE SETUP COMPLETED

@@ -8,13 +8,16 @@ terminate_db_connections()
 
 logger = custom_logging('logs/pipeline.log')
 
-year = 2024
+# year = 2024
 # # out_dir = Path.cwd() / "data"
 # out_dir.mkdir(parents=True, exist_ok=True)
 
 download_url = "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_{year}-{month:02d}.parquet"
 
+
 def download_url_template(year: int, month: int) -> str:
+    """url for pytest
+    """
     return download_url.format(year=year, month=month)
 
 def incremental_data_ingestion(year: int, month: int, cur) -> None:
@@ -61,7 +64,7 @@ def incremental_data_ingestion(year: int, month: int, cur) -> None:
         raise
 
     else:
-        logger.info(f"✅✅✅ Finished Incremental Ingestion for {year}-{month:02d} \n Total Ingestion runtime: {t3 - t4:,.1f}")
+        logger.info(f"✅✅✅ Finished Incremental Ingestion for {year}-{month:02d} \n Total Ingestion runtime: {t3 - t4:,.1f} seconds")
 
     # finally:
     #     cur.close()

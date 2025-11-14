@@ -9,7 +9,6 @@
 - [Reproducing the Project](#reproducing-the-project)
 - [Repository Structure](#repository-structure)
 - [Testing & Validation](#testing-and-validation)
-- [Next Improvements](#next-improvements)
 
 ---
 
@@ -187,4 +186,80 @@ Below is a high-level guide to run the project locally. You can refine or update
 ```bash
 git clone https://github.com/Blackbeard23/python-nyc-taxi-data-pipeline.git
 cd python-nyc-taxi-data-pipeline
+```
+
+### 3. Create and activate a virtual environment
+```bash
+python -m venv env
+env/scripts/activate
+```
+
+### 4. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Configure environmnet variable
+Create a .env file in the project root
+```ini
+HOST=host
+PORT=port
+USER=database_user
+PASSWORD=your_password
+DBNAME=database_name
+```
+Adjust values to match your local RDBMs instance.
+
+### 6. Run the database setup (schemas & tables)
+This will:
+- Create the target database.
+- Create schemas (bronze, silver, gold, meta).
+- Create base tables and partitions.
+- Create the incremental stored procedure.
+```bash
+python src/db_setup.py
+```
+
+### 7. Run the end-to-end ETL pipeline
+This orchestrates:
+- Incremental ingestion from source (web) directly to raw staging layer for the configured month range.
+- Silver transformations (full refresh).
+- Gold aggregations.
+Check the logs:
+- `logs/db_setup.log`
+- `logs/pipeline.log`
+
+for a detailed trace of each step.
+
+---
+## Repository Structure
+```text
+.
+├── .env
+├── .flake8
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── .github
+│   └── workflows
+│       └── ci.yml
+├── logs
+│   ├── db_setup.log
+│   └── pipeline.log
+├── src
+│   ├── db_setup.py
+│   ├── etl_pipeline_run.py
+│   ├── incremental_ingestion.py
+│   ├── silver_gold_etl.py
+│   ├── sql
+│   │   ├── bronze_incremental_load.sql
+│   │   ├── gold_aggregate_layer.sql
+│   │   └── silver_full_refresh_transformation.sql
+│   └── utils
+│       ├── database_connection.py
+│       ├── logging.py
+│       └── __init__.py
+└── test
+    └── test_download_url.py
+        
 ```
