@@ -1,9 +1,9 @@
 import pandas as pd
-from utils import db_connection, custom_logging, terminate_db_connections
+from utils import db_connection, custom_logging
 import time
 import io
 
-terminate_db_connections()
+# terminate_db_connections()
 
 logger = custom_logging('logs/pipeline.log')
 
