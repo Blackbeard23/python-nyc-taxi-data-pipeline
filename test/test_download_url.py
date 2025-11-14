@@ -9,6 +9,7 @@ if str(SRC) not in sys.path:
 
 from incremental_ingestion import download_url_template
 
+
 def test_download_url():
     url = download_url_template(2024, 1)
     assert url.endswith("yellow_tripdata_2024-01.parquet")

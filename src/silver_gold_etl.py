@@ -1,6 +1,7 @@
-from utils import *
+from utils import custom_logging, get_sql_file_text, run_sql_file, db_connection
 
 logger = custom_logging('logs/pipeline.log')
+
 
 def run_silver_layer(admin_cur):
     try:
@@ -39,6 +40,7 @@ def run_gold_layer(admin_cur):
 
     # finally:
     #     gold_conn.close()
+
 
 if __name__ == '__main__':
     try:

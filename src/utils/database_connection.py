@@ -4,18 +4,24 @@ from dotenv import load_dotenv
 import psycopg2
 
 
-load_dotenv()
+def db_credentials():
+    """Helper function for database credentials
+    """
+    load_dotenv()
+    host = os.getenv('HOST')
+    user = os.getenv('USER')
+    port = os.getenv('PORT')
+    password = os.getenv('PASSWORD')
+    db_name = os.getenv('DBNAME').lower()
 
-host = os.getenv('HOST')
-user = os.getenv('USER')
-port = os.getenv('PORT')
-password = os.getenv('PASSWORD')
-db_name = os.getenv('DBNAME').lower()
+    return host, user, port, password, db_name
 
 
 def db_connection():
     """ create database connection.
     """
+    host, user, port, password, db_name = db_credentials()
+
     conn = psycopg2.connect(
         database=db_name,
         host=host,
@@ -36,6 +42,8 @@ def terminate_db_connections():
     Kill all other connections to `dbname` so we can DROP DATABASE.
     Connects to the 'postgres' maintenance DB to do it.
     """
+    host, user, port, password, db_name = db_credentials()
+
     conn = psycopg2.connect(
         host=host,
         port=port,

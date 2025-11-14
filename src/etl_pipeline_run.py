@@ -1,7 +1,8 @@
-from utils import *
-from incremental_ingestion import incremental_data_ingestion
-from silver_gold_etl import *
 import time
+from utils import custom_logging, db_connection
+from incremental_ingestion import incremental_data_ingestion
+from silver_gold_etl import run_gold_layer, run_silver_layer
+
 
 logger = custom_logging('logs/pipeline.log')
 
@@ -15,7 +16,7 @@ try:
     admin_conn = db_connection()
     admin_cur = admin_conn.cursor()
 
-    for month in range(month_start, month_end+1):
+    for month in range(month_start, month_end + 1):
         incremental_data_ingestion(year, month, admin_cur)
 
     run_silver_layer(admin_cur)
@@ -31,6 +32,3 @@ else:
 finally:
     admin_cur.close()
     admin_conn.close()
-
-
-        
