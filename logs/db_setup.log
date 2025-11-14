@@ -1,0 +1,100 @@
+2025-11-12 19:21:17,006 - INFO - ✅ Database was created successfully
+2025-11-12 19:21:17,154 - INFO - ✅ BRONZE schema and Layer was created successully
+2025-11-12 19:21:17,184 - INFO - ✅ META schema and Layers was created successully
+2025-11-12 19:21:17,249 - INFO - ✅ SILVER schema and Layers was created successully
+2025-11-12 19:21:17,364 - INFO - ✅ SILVER table partitions was created successully
+2025-11-12 19:21:17,365 - INFO - ✅ GOLD schema and Layer was created successully
+2025-11-12 19:21:17,366 - INFO - ✅✅✅ DATABASE SET UP COMPLETED
+2025-11-13 18:11:36,145 - INFO - ✅ Database was created successfully
+2025-11-13 18:11:36,330 - INFO - ✅ BRONZE schema and Layer was created successully
+2025-11-13 18:11:36,364 - INFO - ✅ META schema and Layers was created successully
+2025-11-13 18:11:36,408 - INFO - ✅ SILVER schema and Layers was created successully
+2025-11-13 18:11:36,530 - INFO - ✅ SILVER table partitions was created successully
+2025-11-13 18:11:36,532 - INFO - ✅ GOLD schema and Layer was created successully
+2025-11-13 18:11:36,533 - INFO - Applying stored procedure from C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\sql\bronze_incremental_load.sql
+2025-11-13 18:11:36,533 - ERROR - [Errno 2] No such file or directory: 'C:\\Users\\ajibade.adeleke\\Desktop\\python_nyc_taxi_etl\\sql\\bronze_incremental_load.sql'
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\db_setup.py", line 234, in <module>
+    run_sql_file(sql_file)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\db_setup.py", line 219, in run_sql_file
+    with path.open("r", encoding="utf-8") as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ajibade.adeleke\\Desktop\\python_nyc_taxi_etl\\sql\\bronze_incremental_load.sql'
+2025-11-13 18:19:11,945 - INFO - ✅ Database nyc_taxi_2024_py was created successfully
+2025-11-13 18:19:12,034 - INFO - ✅ BRONZE schema and layer were created successfully
+2025-11-13 18:19:12,052 - INFO - ✅ META schema and layers were created successfully
+2025-11-13 18:19:12,175 - INFO - ✅ SILVER table partitions were created successfully
+2025-11-13 18:19:12,181 - INFO - ✅ GOLD schema and layer were created successfully
+2025-11-13 18:19:12,182 - INFO - Applying stored procedure from C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\sql\bronze_incremental_load.sql
+2025-11-13 18:19:12,225 - INFO - ✅ bronze.incremental_load created/updated successfully.
+2025-11-13 18:19:12,225 - INFO - ✅✅✅ DATABASE SETUP COMPLETED
+2025-11-14 08:46:16,252 - ERROR - Error during DB setup: database "nyc_taxi_2024_py" is being accessed by other users
+DETAIL:  There are 7 other sessions using the database.
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\db_setup.py", line 75, in main
+    admin_cur.execute(f"DROP DATABASE IF EXISTS {db_name}")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.ObjectInUse: database "nyc_taxi_2024_py" is being accessed by other users
+DETAIL:  There are 7 other sessions using the database.
+
+2025-11-14 08:47:41,820 - ERROR - Error during DB setup: database "nyc_taxi_2024_py" is being accessed by other users
+DETAIL:  There are 4 other sessions using the database.
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\db_setup.py", line 75, in main
+    admin_cur.execute(f"DROP DATABASE IF EXISTS {db_name}")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.ObjectInUse: database "nyc_taxi_2024_py" is being accessed by other users
+DETAIL:  There are 4 other sessions using the database.
+
+2025-11-14 08:55:04,444 - INFO - ✅ Database nyc_taxi_2024_py was created successfully
+2025-11-14 08:55:04,593 - INFO - ✅ BRONZE schema and layer were created successfully
+2025-11-14 08:55:04,628 - INFO - ✅ META schema and layers were created successfully
+2025-11-14 08:55:04,775 - INFO - ✅ SILVER table partitions were created successfully
+2025-11-14 08:55:04,776 - INFO - ✅ GOLD schema and layer were created successfully
+2025-11-14 08:55:04,777 - INFO - Applying stored procedure from C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\sql\bronze_incremental_load.sql
+2025-11-14 08:55:04,795 - INFO - ✅ bronze.incremental_load created/updated successfully.
+2025-11-14 08:55:04,796 - INFO - ✅✅✅ DATABASE SETUP COMPLETED
+2025-11-14 10:08:17,335 - INFO - ✅ Database nyc_taxi_2024_py was created successfully
+2025-11-14 10:08:17,408 - INFO - ✅ BRONZE schema and layer were created successfully
+2025-11-14 10:08:17,422 - INFO - ✅ META schema and layers were created successfully
+2025-11-14 10:08:17,495 - INFO - ✅ SILVER table partitions were created successfully
+2025-11-14 10:08:17,496 - INFO - ✅ GOLD schema and layer were created successfully
+2025-11-14 10:08:17,497 - INFO - Applying stored procedure from C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\sql\bronze_incremental_load.sql
+2025-11-14 10:08:17,501 - INFO - ✅ bronze.incremental_load created/updated successfully.
+2025-11-14 10:08:17,502 - INFO - ✅✅✅ DATABASE SETUP COMPLETED
+2025-11-14 10:14:46,782 - INFO - ✅ Database nyc_taxi_2024_py was created successfully
+2025-11-14 10:14:46,850 - INFO - ✅ BRONZE schema and layer were created successfully
+2025-11-14 10:14:46,863 - INFO - ✅ META schema and layers were created successfully
+2025-11-14 10:14:46,926 - INFO - ✅ SILVER table partitions were created successfully
+2025-11-14 10:14:46,926 - INFO - ✅ GOLD schema and layer were created successfully
+2025-11-14 10:14:46,927 - INFO - Applying stored procedure from C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\sql\bronze_incremental_load.sql
+2025-11-14 10:14:46,941 - INFO - ✅ bronze.incremental_load created/updated successfully.
+2025-11-14 10:14:46,941 - INFO - ✅✅✅ DATABASE SETUP COMPLETED
+2025-11-14 10:17:51,665 - INFO - ✅ Database nyc_taxi_2024_py was created successfully
+2025-11-14 10:17:51,742 - INFO - ✅ BRONZE schema and layer were created successfully
+2025-11-14 10:17:51,756 - INFO - ✅ META schema and layers were created successfully
+2025-11-14 10:17:51,864 - INFO - ✅ SILVER table partitions were created successfully
+2025-11-14 10:17:51,865 - INFO - ✅ GOLD schema and layer were created successfully
+2025-11-14 10:17:51,866 - INFO - Applying stored procedure from C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\sql\bronze_incremental_load.sql
+2025-11-14 10:17:51,870 - INFO - ✅ bronze.incremental_load created/updated successfully.
+2025-11-14 10:17:51,871 - INFO - ✅✅✅ DATABASE SETUP COMPLETED
+2025-11-14 10:24:23,400 - INFO - ✅ Database nyc_taxi_2024_py was created successfully
+2025-11-14 10:24:23,473 - INFO - ✅ BRONZE schema and layer were created successfully
+2025-11-14 10:24:23,487 - INFO - ✅ META schema and layers were created successfully
+2025-11-14 10:24:23,553 - INFO - ✅ SILVER table partitions were created successfully
+2025-11-14 10:24:23,554 - INFO - ✅ GOLD schema and layer were created successfully
+2025-11-14 10:24:23,555 - INFO - Applying stored procedure from C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\sql\bronze_incremental_load.sql
+2025-11-14 10:24:23,568 - INFO - ✅ bronze.incremental_load created/updated successfully.
+2025-11-14 10:24:23,569 - INFO - ✅✅✅ DATABASE SETUP COMPLETED
+2025-11-14 12:45:05,399 - INFO - ✅ Database nyc_taxi_2024_py was created successfully
+2025-11-14 12:45:05,488 - INFO - ✅ BRONZE schema and layer were created successfully
+2025-11-14 12:45:05,502 - INFO - ✅ META schema and layers were created successfully
+2025-11-14 12:45:05,577 - INFO - ✅ SILVER table partitions were created successfully
+2025-11-14 12:45:05,578 - INFO - ✅ GOLD schema and layer were created successfully
+2025-11-14 12:45:05,579 - INFO - Applying stored procedure from C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\sql\bronze_incremental_load.sql
+2025-11-14 12:45:05,583 - INFO - ✅ bronze.incremental_load created/updated successfully.
+2025-11-14 12:45:05,583 - INFO - ✅✅✅ DATABASE SETUP COMPLETED

@@ -1,0 +1,7 @@
+pandas==2.3.3
+pyarrow
+psycopg2
+python-dotenv
+sqlalchemy
+pytest
+flake8

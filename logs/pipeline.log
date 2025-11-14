@@ -1,0 +1,239 @@
+2025-11-14 15:34:14,690 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-14 15:34:24,210 - INFO - read_parquet: 9.5 seconds, rows=2,964,624
+2025-11-14 15:34:24,222 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 15:35:19,916 - INFO -   COPY into raw_stage: 21.2 seconds
+2025-11-14 15:35:19,917 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 15:35:34,937 - INFO -   Procedure runtime (including SQL work): 15.0 seconds
+2025-11-14 15:35:34,937 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01 
+ Total Ingestion runtime: 80.2
+2025-11-14 15:35:35,099 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-14 15:35:44,053 - INFO - read_parquet: 9.0 seconds, rows=3,007,526
+2025-11-14 15:35:44,138 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 15:36:42,479 - INFO -   COPY into raw_stage: 21.8 seconds
+2025-11-14 15:36:42,479 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 15:37:38,327 - INFO -   Procedure runtime (including SQL work): 55.8 seconds
+2025-11-14 15:37:38,328 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02 
+ Total Ingestion runtime: 123.2
+2025-11-14 15:37:38,510 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-03.parquet
+2025-11-14 15:37:48,948 - INFO - read_parquet: 10.4 seconds, rows=3,582,628
+2025-11-14 15:37:48,964 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 15:39:22,850 - INFO -   COPY into raw_stage: 38.1 seconds
+2025-11-14 15:39:22,852 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 15:40:39,930 - INFO -   Procedure runtime (including SQL work): 77.1 seconds
+2025-11-14 15:40:39,930 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-03 
+ Total Ingestion runtime: 181.4
+2025-11-14 15:40:40,272 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-04.parquet
+2025-11-14 15:40:51,146 - INFO - read_parquet: 10.9 seconds, rows=3,514,289
+2025-11-14 15:40:51,197 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 15:42:09,577 - INFO -   COPY into raw_stage: 27.2 seconds
+2025-11-14 15:42:09,578 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 15:43:19,907 - INFO -   Procedure runtime (including SQL work): 70.3 seconds
+2025-11-14 15:43:19,907 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-04 
+ Total Ingestion runtime: 159.6
+2025-11-14 15:43:20,136 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-05.parquet
+2025-11-14 15:43:31,072 - INFO - read_parquet: 10.9 seconds, rows=3,723,833
+2025-11-14 15:43:31,126 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 15:44:59,340 - INFO -   COPY into raw_stage: 30.8 seconds
+2025-11-14 15:44:59,341 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 15:46:05,111 - INFO -   Procedure runtime (including SQL work): 65.8 seconds
+2025-11-14 15:46:05,111 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-05 
+ Total Ingestion runtime: 165.0
+2025-11-14 15:46:06,485 - INFO - 🎊🎉🎊 Pipeline ran successfully
+2025-11-14 15:50:59,448 - INFO - ✅✅✅ Aggregation layer model completed.
+2025-11-14 15:54:33,840 - ERROR - duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\utils\database_connection.py", line 75, in run_sql_file
+    cursor.execute(sql_text)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+
+2025-11-14 15:54:33,842 - INFO - ✅✅✅ SILVER layer transformation completed: raw Bronze trips normalized into relational tables.
+                    derived features calculated, and values standardized for downstream Gold models.
+                    
+2025-11-14 15:54:33,898 - INFO - ✅✅✅ Aggregation layer model completed.
+2025-11-14 15:55:11,489 - ERROR - duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\utils\database_connection.py", line 75, in run_sql_file
+    cursor.execute(sql_text)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+
+2025-11-14 15:55:11,491 - INFO - ✅✅✅ SILVER layer transformation completed: raw Bronze trips normalized into relational tables.
+                    derived features calculated, and values standardized for downstream Gold models.
+                    
+2025-11-14 15:55:11,544 - INFO - ✅✅✅ Aggregation layer model completed.
+2025-11-14 15:55:54,052 - ERROR - duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\utils\database_connection.py", line 75, in run_sql_file
+    cursor.execute(sql_text)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+
+2025-11-14 15:55:54,054 - INFO - ✅✅✅ SILVER layer transformation completed: raw Bronze trips normalized into relational tables.
+                    derived features calculated, and values standardized for downstream Gold models.
+                    
+2025-11-14 15:55:54,106 - INFO - ✅✅✅ Aggregation layer model completed.
+2025-11-14 16:07:56,949 - ERROR - ❌ Error during Silver Transformation Layer: duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\silver_gold_etl.py", line 11, in run_silver_layer
+    run_sql_file(silver_path, admin_conn)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\utils\database_connection.py", line 71, in run_sql_file
+    cursor.execute(sql_text)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+
+2025-11-14 16:11:01,705 - ERROR - ❌ Error during Silver Transformation Layer: duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\silver_gold_etl.py", line 11, in run_silver_layer
+    run_sql_file(silver_path, admin_conn)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\utils\database_connection.py", line 71, in run_sql_file
+    cursor.execute(sql_text)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+
+2025-11-14 16:11:01,717 - INFO - ✅✅✅ Aggregation layer model completed.
+2025-11-14 16:11:49,407 - ERROR - ❌ Error during Silver Transformation Layer: duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\silver_gold_etl.py", line 11, in run_silver_layer
+    run_sql_file(silver_path, admin_conn)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\utils\database_connection.py", line 71, in run_sql_file
+    cursor.execute(sql_text)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+
+2025-11-14 16:33:43,902 - ERROR - ❌ Error during Silver Transformation Layer: duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\silver_gold_etl.py", line 11, in run_silver_layer
+    run_sql_file(silver_path, admin_conn)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\utils\database_connection.py", line 71, in run_sql_file
+    cursor.execute(sql_text)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+
+2025-11-14 16:50:26,257 - ERROR - ❌ Error during Silver Transformation Layer: 'psycopg2.extensions.connection' object has no attribute 'execute'
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\silver_gold_etl.py", line 11, in run_silver_layer
+    run_sql_file(silver_path, admin_cur)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\utils\database_connection.py", line 71, in run_sql_file
+    cursor.execute(sql_text)
+    ^^^^^^^^^^^^^^
+AttributeError: 'psycopg2.extensions.connection' object has no attribute 'execute'
+2025-11-14 16:51:22,667 - ERROR - ❌ Error during Silver Transformation Layer: 'psycopg2.extensions.connection' object has no attribute 'execute'
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\silver_gold_etl.py", line 11, in run_silver_layer
+    run_sql_file(silver_path, admin_cur)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\utils\database_connection.py", line 71, in run_sql_file
+    cursor.execute(sql_text)
+    ^^^^^^^^^^^^^^
+AttributeError: 'psycopg2.extensions.connection' object has no attribute 'execute'
+2025-11-14 16:52:14,436 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-14 16:52:22,171 - INFO - read_parquet: 7.7 seconds, rows=2,964,624
+2025-11-14 16:52:22,211 - INFO - All done.
+2025-11-14 16:53:12,814 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-14 16:53:28,840 - INFO - read_parquet: 16.0 seconds, rows=2,964,624
+2025-11-14 16:53:28,840 - ERROR - ❌ Error during Ingestion: 'psycopg2.extensions.connection' object has no attribute 'execute'
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\incremental_ingestion.py", line 28, in incremental_data_ingestion
+    cur.execute('DROP TABLE IF EXISTS raw_stage')
+    ^^^^^^^^^^^
+AttributeError: 'psycopg2.extensions.connection' object has no attribute 'execute'
+2025-11-14 16:53:28,841 - INFO - All done.
+2025-11-14 16:54:34,225 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-14 16:55:02,996 - INFO - read_parquet: 28.8 seconds, rows=2,964,624
+2025-11-14 16:55:03,036 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 16:56:00,286 - INFO -   COPY into raw_stage: 20.1 seconds
+2025-11-14 16:56:00,287 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 16:56:03,569 - INFO -   Procedure runtime (including SQL work): 3.3 seconds
+2025-11-14 16:56:03,569 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01 
+ Total Ingestion runtime: 89.3
+2025-11-14 16:56:03,749 - INFO - All done.
+2025-11-14 16:57:26,901 - ERROR - ❌ Error during Silver Transformation Layer: 'psycopg2.extensions.connection' object has no attribute 'execute'
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\silver_gold_etl.py", line 11, in run_silver_layer
+    run_sql_file(silver_path, admin_cur)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\utils\database_connection.py", line 71, in run_sql_file
+    cursor.execute(sql_text)
+    ^^^^^^^^^^^^^^
+AttributeError: 'psycopg2.extensions.connection' object has no attribute 'execute'
+2025-11-14 16:58:20,604 - ERROR - ❌ Error during Silver Transformation Layer: duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\silver_gold_etl.py", line 11, in run_silver_layer
+    run_sql_file(silver_path, admin_cur)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\utils\database_connection.py", line 71, in run_sql_file
+    cursor.execute(sql_text)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ratecode_pkey"
+DETAIL:  Key (ratecodeid)=(1) already exists.
+
+2025-11-14 17:03:13,568 - INFO - ✅✅✅ SILVER layer transformation completed: raw Bronze trips normalized into relational tables.
+                    derived features calculated, and values standardized for downstream Gold models.
+                    
+2025-11-14 17:03:13,622 - INFO - ✅✅✅ Aggregation layer model completed.
+2025-11-14 17:03:44,763 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-14 17:03:54,724 - INFO - read_parquet: 10.0 seconds, rows=2,964,624
+2025-11-14 17:03:54,744 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 17:04:50,209 - INFO -   COPY into raw_stage: 19.9 seconds
+2025-11-14 17:04:50,210 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 17:04:53,375 - INFO -   Procedure runtime (including SQL work): 3.2 seconds
+2025-11-14 17:04:53,375 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01 
+ Total Ingestion runtime: 68.6
+2025-11-14 17:04:53,552 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-14 17:05:04,513 - INFO - read_parquet: 11.0 seconds, rows=3,007,526
+2025-11-14 17:05:04,601 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 17:06:04,018 - INFO -   COPY into raw_stage: 21.0 seconds
+2025-11-14 17:06:04,018 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 17:06:37,158 - INFO -   Procedure runtime (including SQL work): 33.1 seconds
+2025-11-14 17:06:37,158 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02 
+ Total Ingestion runtime: 103.6
+2025-11-14 17:06:37,369 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-03.parquet
+2025-11-14 17:07:13,741 - INFO - read_parquet: 36.4 seconds, rows=3,582,628
+2025-11-14 17:07:13,823 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 17:08:28,189 - INFO -   COPY into raw_stage: 26.1 seconds
+2025-11-14 17:08:28,190 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 17:09:05,767 - INFO -   Procedure runtime (including SQL work): 37.6 seconds
+2025-11-14 17:09:05,768 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-03 
+ Total Ingestion runtime: 148.4
+2025-11-14 17:09:05,958 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-04.parquet
+2025-11-14 17:09:24,466 - INFO - read_parquet: 18.5 seconds, rows=3,514,289
+2025-11-14 17:09:24,506 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 17:10:42,604 - INFO -   COPY into raw_stage: 26.1 seconds
+2025-11-14 17:10:42,605 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 17:11:20,033 - INFO -   Procedure runtime (including SQL work): 37.4 seconds
+2025-11-14 17:11:20,033 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-04 
+ Total Ingestion runtime: 134.1
+2025-11-14 17:11:20,278 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-05.parquet
+2025-11-14 17:11:41,081 - INFO - read_parquet: 20.8 seconds, rows=3,723,833
+2025-11-14 17:11:41,262 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-14 17:13:03,505 - INFO -   COPY into raw_stage: 27.5 seconds
+2025-11-14 17:13:03,505 - INFO -   Calling bronze.incremental_load() ...
+2025-11-14 17:13:43,513 - INFO -   Procedure runtime (including SQL work): 40.0 seconds
+2025-11-14 17:13:43,514 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-05 
+ Total Ingestion runtime: 143.2
+2025-11-14 17:16:46,394 - INFO - ✅✅✅ SILVER layer transformation completed: raw Bronze trips normalized into relational tables.
+                    derived features calculated, and values standardized for downstream Gold models.
+                    
+2025-11-14 17:16:46,433 - INFO - ✅✅✅ Aggregation layer model completed.
+2025-11-14 17:16:46,433 - INFO - 🎊🎉🎊 Pipeline ran successfully
