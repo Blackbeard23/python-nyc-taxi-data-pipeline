@@ -13,6 +13,10 @@ def db_credentials():
     port = os.getenv('PORT')
     password = os.getenv('PASSWORD')
     db_name = os.getenv('DBNAME').lower()
+    if db_name:
+        db_name = db_name
+    else:
+        db_name = 'nyc_taxi_2024_py'
 
     return host, user, port, password, db_name
 

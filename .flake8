@@ -8,6 +8,7 @@ exclude =
     .pytest_cache,
     logs,
     __init__.py
+    test_download_url.py
 ignore =
     E203,
     W503

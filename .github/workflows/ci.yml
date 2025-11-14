@@ -30,7 +30,7 @@ jobs:
       # 4. Run flake8 (linting)
       - name: Run flake8
         run: |
-          flake8 src
+          flake8
 
       # 5. Run pytest (unit tests)
       - name: Run pytest
