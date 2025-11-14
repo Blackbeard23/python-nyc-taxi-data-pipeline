@@ -225,6 +225,7 @@ This orchestrates:
 - Incremental ingestion from source (web) directly to raw staging layer for the configured month range.
 - Silver transformations (full refresh).
 - Gold aggregations.
+
 Check the logs:
 - `logs/db_setup.log`
 - `logs/pipeline.log`
