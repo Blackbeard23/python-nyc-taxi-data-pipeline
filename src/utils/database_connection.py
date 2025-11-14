@@ -12,7 +12,8 @@ def db_credentials():
     user = os.getenv('USER')
     port = os.getenv('PORT')
     password = os.getenv('PASSWORD')
-    db_name = os.getenv('DBNAME').lower()
+    db_name = str(os.getenv('DBNAME'))
+    db_name = db_name.lower()
     if db_name:
         db_name = db_name
     else:
