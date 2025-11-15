@@ -211,16 +211,20 @@ DBNAME=database_name
 Adjust values to match your local RDBMs instance.
 
 ### 6. Run the database setup (schemas & tables)
+```bash
+python src/db_setup.py
+```
 This will:
 - Create the target database.
 - Create schemas (bronze, silver, gold, meta).
 - Create base tables and partitions.
 - Create the incremental stored procedure.
-```bash
-python src/db_setup.py
-```
+
 
 ### 7. Run the end-to-end ETL pipeline
+```bash
+python src/etl_pipeline_run.py
+```
 This orchestrates:
 - Incremental ingestion from source (web) directly to raw staging layer for the configured month range.
 - Silver transformations (full refresh).
