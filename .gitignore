@@ -16,3 +16,5 @@ test.ipynb
 
 # Env files
 .env
+
+.github/workflows/cronjob.yml

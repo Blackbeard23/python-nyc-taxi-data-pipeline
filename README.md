@@ -5,9 +5,9 @@
 - [Overview](#overview)
 - [Project Objective](#project-objective)
 - [Project Architecture](#project-architecture)
+- [Repository Structure](#repository-structure)
 - [Pipeline Flow and Logic](#pipeline-flow-and-logic)
 - [Reproducing the Project](#reproducing-the-project)
-- [Repository Structure](#repository-structure)
 - [Testing & Validation](#testing-and-validation)
 
 ---
@@ -47,8 +47,7 @@ The objective is to design and implement a **fully SQL-driven ETL pipeline orche
 ---
 
 ## Project Architecture
-
-
+![pipeline architecture diagram](image/DEC%20II%20arch_diagram.gif)
 
 The architecture follows the Medallion pattern:
 
@@ -73,12 +72,46 @@ The architecture follows the Medallion pattern:
   - `meta.invalid_records`: stores out-of-range or otherwise rejected rows from staging.
 
 ---
+## Repository Structure
+```text
+.
+├── .env
+├── .flake8
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── .github
+│   └── workflows
+│       └── ci.yml
+├── logs
+│   ├── db_setup.log
+│   └── pipeline.log
+├── src
+│   ├── db_setup.py
+│   ├── etl_pipeline_run.py
+│   ├── incremental_ingestion.py
+│   ├── silver_gold_etl.py
+│   ├── sql
+│   │   ├── bronze_incremental_load.sql
+│   │   ├── gold_aggregate_layer.sql
+│   │   └── silver_full_refresh_transformation.sql
+│   └── utils
+│       ├── database_connection.py
+│       ├── logging.py
+│       └── __init__.py
+└── test
+│    └── test_download_url.py
+└── image
+    └── DEC II arch_diagram.gif
+        
+```
 
+---
 ## Pipeline Flow and Logic
 
 ### 1. Metadata Management
 
-The metadata table is now **`meta.metadata_table`** with the following columns:
+The metadata table **`meta.metadata_table`** has the following columns:
 
 - `last_load_date` – **timestamp** of the latest pickup datetime successfully loaded into Bronze.
 - `status` – `meta.status_enum` with values:
@@ -114,8 +147,9 @@ Incremental load is handled by a combination of **Python + PL/pgSQL**:
      - `month_end` = first day of the next month.
    - Inserts into `bronze.yellow_taxi_raw` only rows where:
      ```sql
-     tpep_pickup_datetime >= month_start
-     AND tpep_pickup_datetime < month_end;
+     -- only when pickup_datetime is greater than metadata last_load_date and within period window
+     tpep_pickup_datetime > m_lld 
+     AND (tpep_pickup_datetime >= month_start AND tpep_pickup_datetime < month_end);
      ```
    - Inserts all **out-of-range rows** into `meta.invalid_records` (with `ON CONFLICT DO NOTHING` on the composite key).
    - Computes:
@@ -237,34 +271,4 @@ Check the logs:
 for a detailed trace of each step.
 
 ---
-## Repository Structure
-```text
-.
-├── .env
-├── .flake8
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── .github
-│   └── workflows
-│       └── ci.yml
-├── logs
-│   ├── db_setup.log
-│   └── pipeline.log
-├── src
-│   ├── db_setup.py
-│   ├── etl_pipeline_run.py
-│   ├── incremental_ingestion.py
-│   ├── silver_gold_etl.py
-│   ├── sql
-│   │   ├── bronze_incremental_load.sql
-│   │   ├── gold_aggregate_layer.sql
-│   │   └── silver_full_refresh_transformation.sql
-│   └── utils
-│       ├── database_connection.py
-│       ├── logging.py
-│       └── __init__.py
-└── test
-    └── test_download_url.py
-        
-```
+
