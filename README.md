@@ -47,7 +47,7 @@ The objective is to design and implement a **fully SQL-driven ETL pipeline orche
 ---
 
 ## Project Architecture
-![pipeline architecture diagram](image/architecture_diagram.gif)
+![pipeline architecture diagram](image/DEC%20II.gif)
 
 The architecture follows the Medallion pattern:
 
