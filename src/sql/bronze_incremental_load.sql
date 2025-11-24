@@ -19,7 +19,7 @@ BEGIN
   INTO m_lld
   FROM meta.metadata_table;
 
-  SELECT DATE_TRUNC('month', m_lld) INTO month_start;
+  SELECT DATE_TRUNC('month', TIMESTAMP '{}') INTO month_start;
 
   SELECT month_start + INTERVAL '1 month' INTO month_end;
   
@@ -61,8 +61,7 @@ BEGIN
   ON CONFLICT(vendorid, tpep_pickup_datetime, tpep_dropoff_datetime,
 				trip_distance, pulocationid, dolocationid, total_amount) DO NOTHING;
 
-  SELECT MAX(tpep_pickup_datetime) INTO m_lld FROM bronze.yellow_taxi_raw
-  WHERE (tpep_pickup_datetime >= month_start AND tpep_pickup_datetime < month_end);
+  SELECT MAX(tpep_pickup_datetime) INTO m_lld FROM bronze.yellow_taxi_raw;
 
   end_time := clock_timestamp();
   execution_duration := end_time - start_time;

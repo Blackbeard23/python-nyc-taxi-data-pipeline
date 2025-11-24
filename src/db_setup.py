@@ -2,7 +2,7 @@
 import os
 from dotenv import load_dotenv
 import psycopg2
-from utils import custom_logging, run_sql_file, get_sql_file_text
+from utils import custom_logging
 from utils import terminate_db_connections
 
 # Logging setup
@@ -280,18 +280,6 @@ def main() -> None:
         # -----------------------------
         db_cur.execute("CREATE SCHEMA IF NOT EXISTS gold")
         logger.info("✅ GOLD schema and layer were created successfully")
-
-        # -----------------------------
-        # 7. Apply stored procedure from src/sql/bronze_incremental_load.sql
-        # -----------------------------
-        # db_setup.py is in src/, so parent is src/
-        # src_dir = Path(__file__).resolve().parent
-        # sql_file = src_dir / "sql" / "bronze_incremental_load.sql"
-        sql_file = get_sql_file_text('bronze_incremental_load.sql')
-
-        logger.info("Applying stored procedure from %s", sql_file)
-        run_sql_file(sql_file, db_cur)
-        logger.info("✅ bronze.incremental_load created/updated successfully.")
 
         db_cur.close()
         db_conn.close()

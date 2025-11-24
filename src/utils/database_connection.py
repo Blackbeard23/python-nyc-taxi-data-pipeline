@@ -73,7 +73,7 @@ def terminate_db_connections():
     conn.close()
 
 
-def get_sql_file_text(file_name: str) -> str:
+def get_sql_file_text(file_name: str) -> Path:
     """convert .sql file to readable text file
         to execute as sql statement
     """

@@ -282,3 +282,386 @@ DETAIL:  Key (ratecodeid)=(1) already exists.
                     
 2025-11-14 22:34:59,709 - INFO - ✅✅✅ Aggregation layer model completed.
 2025-11-14 22:34:59,709 - INFO - 🎊🎉🎊 Pipeline ran successfully
+2025-11-24 13:57:50,618 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 13:57:59,954 - INFO - read_parquet: 9.3 seconds, rows=2,964,624
+2025-11-24 13:57:59,977 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 13:59:20,361 - INFO -   COPY into raw_stage: 27.4 seconds
+2025-11-24 13:59:20,372 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 13:59:48,867 - INFO -   Procedure runtime (including SQL work): 28.5 seconds
+2025-11-24 13:59:48,873 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 118.2 seconds
+2025-11-24 13:59:49,282 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 14:10:24,565 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 14:10:31,436 - INFO - read_parquet: 6.9 seconds, rows=2,964,624
+2025-11-24 14:10:31,465 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 14:11:42,996 - INFO -   COPY into raw_stage: 27.6 seconds
+2025-11-24 14:11:43,006 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 14:12:08,979 - INFO -   Procedure runtime (including SQL work): 26.0 seconds
+2025-11-24 14:12:08,979 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 104.4 seconds
+2025-11-24 14:12:09,262 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 14:12:14,211 - INFO - read_parquet: 4.9 seconds, rows=3,007,526
+2025-11-24 14:12:14,315 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 14:13:26,356 - INFO -   COPY into raw_stage: 26.5 seconds
+2025-11-24 14:13:26,357 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 14:14:35,989 - INFO -   Procedure runtime (including SQL work): 69.6 seconds
+2025-11-24 14:14:35,994 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 146.7 seconds
+2025-11-24 14:14:36,617 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-03.parquet
+2025-11-24 14:14:43,450 - INFO - read_parquet: 6.8 seconds, rows=3,582,628
+2025-11-24 14:14:43,513 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 14:16:13,670 - INFO -   COPY into raw_stage: 33.9 seconds
+2025-11-24 14:16:13,670 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 14:17:35,718 - INFO -   Procedure runtime (including SQL work): 82.0 seconds
+2025-11-24 14:17:35,718 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-03
+                    Total Ingestion runtime: 179.1 seconds
+2025-11-24 14:17:36,023 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-04.parquet
+2025-11-24 14:17:42,585 - INFO - read_parquet: 6.6 seconds, rows=3,514,289
+2025-11-24 14:17:42,617 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 14:19:21,940 - INFO -   COPY into raw_stage: 42.2 seconds
+2025-11-24 14:19:21,941 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 14:21:05,261 - INFO -   Procedure runtime (including SQL work): 103.3 seconds
+2025-11-24 14:21:05,261 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-04
+                    Total Ingestion runtime: 209.2 seconds
+2025-11-24 14:21:05,502 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-05.parquet
+2025-11-24 14:21:15,703 - INFO - read_parquet: 10.2 seconds, rows=3,723,833
+2025-11-24 14:21:15,767 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 14:23:29,600 - INFO -   COPY into raw_stage: 45.5 seconds
+2025-11-24 14:23:29,613 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 14:24:57,293 - INFO -   Procedure runtime (including SQL work): 87.7 seconds
+2025-11-24 14:24:57,294 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-05
+                    Total Ingestion runtime: 231.8 seconds
+2025-11-24 14:27:39,436 - INFO - ✅✅✅ SILVER layer transformation completed: raw Bronze trips normalized into relational tables.
+                    derived features calculated, and values standardized for downstream Gold models.
+                    
+2025-11-24 14:27:39,534 - INFO - ✅✅✅ Aggregation layer model completed.
+2025-11-24 14:27:39,534 - INFO - 🎊🎉🎊 Pipeline ran successfully
+2025-11-24 14:35:15,981 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 14:35:23,561 - INFO - read_parquet: 7.6 seconds, rows=2,964,624
+2025-11-24 14:35:23,597 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 14:36:35,126 - INFO -   COPY into raw_stage: 27.8 seconds
+2025-11-24 14:36:35,126 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 14:37:07,617 - INFO -   Procedure runtime (including SQL work): 32.5 seconds
+2025-11-24 14:37:07,618 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 111.6 seconds
+2025-11-24 14:37:07,923 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 14:37:58,382 - INFO - read_parquet: 50.5 seconds, rows=3,007,526
+2025-11-24 14:37:58,554 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 14:39:40,810 - INFO -   COPY into raw_stage: 31.8 seconds
+2025-11-24 14:39:40,814 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 14:40:54,668 - INFO -   Procedure runtime (including SQL work): 73.9 seconds
+2025-11-24 14:40:54,669 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 226.7 seconds
+2025-11-24 14:40:54,948 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-03.parquet
+2025-11-24 14:41:13,677 - INFO - read_parquet: 18.7 seconds, rows=3,582,628
+2025-11-24 14:41:13,725 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 14:42:59,413 - INFO -   COPY into raw_stage: 43.4 seconds
+2025-11-24 14:42:59,418 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 14:44:43,924 - INFO -   Procedure runtime (including SQL work): 104.5 seconds
+2025-11-24 14:44:43,928 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-03
+                    Total Ingestion runtime: 229.0 seconds
+2025-11-24 14:46:40,974 - INFO - ✅✅✅ SILVER layer transformation completed: raw Bronze trips normalized into relational tables.
+                    derived features calculated, and values standardized for downstream Gold models.
+                    
+2025-11-24 14:46:41,071 - INFO - ✅✅✅ Aggregation layer model completed.
+2025-11-24 14:46:41,072 - INFO - 🎊🎉🎊 Pipeline ran successfully
+2025-11-24 15:04:23,199 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 15:04:29,964 - INFO - read_parquet: 6.8 seconds, rows=2,964,624
+2025-11-24 15:04:30,008 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 15:05:45,694 - INFO -   COPY into raw_stage: 24.9 seconds
+2025-11-24 15:05:45,694 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 15:06:08,063 - INFO -   Procedure runtime (including SQL work): 22.4 seconds
+2025-11-24 15:06:08,063 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 104.9 seconds
+2025-11-24 15:06:08,395 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 15:06:23,915 - INFO - read_parquet: 15.5 seconds, rows=3,007,526
+2025-11-24 15:06:23,998 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 15:07:37,494 - INFO -   COPY into raw_stage: 27.6 seconds
+2025-11-24 15:07:37,494 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 15:08:51,063 - INFO -   Procedure runtime (including SQL work): 73.6 seconds
+2025-11-24 15:08:51,063 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 162.7 seconds
+2025-11-24 15:08:51,272 - INFO - All done.
+2025-11-24 15:10:04,341 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 15:10:04,502 - INFO - All done.
+2025-11-24 15:10:50,305 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 15:10:50,519 - INFO - All done.
+2025-11-24 15:13:46,175 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 15:13:46,414 - INFO - All done.
+2025-11-24 15:14:19,060 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 15:14:19,241 - INFO - All done.
+2025-11-24 15:14:28,595 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 15:14:28,685 - INFO - All done.
+2025-11-24 15:14:52,257 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 15:14:52,343 - INFO - All done.
+2025-11-24 15:15:37,841 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 15:15:44,375 - INFO - read_parquet: 6.5 seconds, rows=2,964,624
+2025-11-24 15:15:44,442 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 15:17:07,655 - INFO -   COPY into raw_stage: 31.6 seconds
+2025-11-24 15:17:07,656 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 15:17:36,584 - INFO -   Procedure runtime (including SQL work): 28.9 seconds
+2025-11-24 15:17:36,585 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 118.7 seconds
+2025-11-24 15:17:36,863 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 15:17:44,688 - INFO - read_parquet: 7.8 seconds, rows=3,007,526
+2025-11-24 15:17:44,922 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 15:19:04,090 - INFO -   COPY into raw_stage: 33.6 seconds
+2025-11-24 15:19:04,090 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 15:20:16,532 - INFO -   Procedure runtime (including SQL work): 72.4 seconds
+2025-11-24 15:20:16,535 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 159.7 seconds
+2025-11-24 15:20:16,772 - INFO - All done.
+2025-11-24 15:40:34,752 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 15:40:42,701 - INFO - read_parquet: 7.9 seconds, rows=2,964,624
+2025-11-24 15:40:42,835 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 15:42:05,436 - INFO -   COPY into raw_stage: 30.9 seconds
+2025-11-24 15:42:05,444 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 15:42:39,276 - INFO -   Procedure runtime (including SQL work): 33.8 seconds
+2025-11-24 15:42:39,277 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 124.5 seconds
+2025-11-24 15:42:39,548 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 15:42:47,201 - INFO - read_parquet: 7.7 seconds, rows=3,007,526
+2025-11-24 15:42:47,308 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 15:44:26,626 - INFO -   COPY into raw_stage: 38.8 seconds
+2025-11-24 15:44:26,626 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 15:45:36,987 - INFO -   Procedure runtime (including SQL work): 70.4 seconds
+2025-11-24 15:45:36,987 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 177.4 seconds
+2025-11-24 15:45:37,272 - INFO - All done.
+2025-11-24 16:05:10,878 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 16:06:35,417 - INFO - All done.
+2025-11-24 16:07:50,298 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 16:07:51,432 - INFO - All done.
+2025-11-24 16:08:29,609 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 16:08:29,688 - INFO - All done.
+2025-11-24 16:09:12,039 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 16:09:12,145 - INFO - All done.
+2025-11-24 19:05:04,765 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 19:05:13,742 - INFO - read_parquet: 9.0 seconds, rows=2,964,624
+2025-11-24 19:05:13,743 - ERROR - ❌ Error during Ingestion: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\incremental_ingestion.py", line 42, in incremental_data_ingestion
+    cur.execute('DROP TABLE IF EXISTS raw_stage')
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2025-11-24 19:05:13,748 - INFO - All done.
+2025-11-24 19:05:59,492 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 19:06:06,576 - INFO - read_parquet: 7.1 seconds, rows=2,964,624
+2025-11-24 19:06:06,655 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 19:09:12,348 - INFO -   COPY into raw_stage: 81.0 seconds
+2025-11-24 19:09:12,458 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 19:09:45,214 - INFO -   Procedure runtime (including SQL work): 32.8 seconds
+2025-11-24 19:09:45,215 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 225.7 seconds
+2025-11-24 19:09:46,071 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 19:09:53,516 - INFO - read_parquet: 7.4 seconds, rows=3,007,526
+2025-11-24 19:09:53,736 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 19:13:06,584 - INFO -   COPY into raw_stage: 82.6 seconds
+2025-11-24 19:13:06,597 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 19:15:09,730 - INFO -   Procedure runtime (including SQL work): 123.1 seconds
+2025-11-24 19:15:09,730 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 323.6 seconds
+2025-11-24 19:15:10,122 - INFO - All done.
+2025-11-24 19:20:13,677 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 19:20:26,880 - INFO - read_parquet: 13.2 seconds, rows=2,964,624
+2025-11-24 19:20:26,930 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 19:24:05,433 - INFO -   COPY into raw_stage: 74.2 seconds
+2025-11-24 19:24:05,539 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 19:24:34,840 - INFO -   Procedure runtime (including SQL work): 29.3 seconds
+2025-11-24 19:24:34,841 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 261.2 seconds
+2025-11-24 19:24:35,328 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 19:24:43,982 - INFO - read_parquet: 8.7 seconds, rows=3,007,526
+2025-11-24 19:24:44,190 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 19:26:20,211 - INFO -   COPY into raw_stage: 28.2 seconds
+2025-11-24 19:26:20,251 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 19:27:21,235 - INFO -   Procedure runtime (including SQL work): 61.0 seconds
+2025-11-24 19:27:21,235 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 165.9 seconds
+2025-11-24 19:27:21,692 - INFO - All done.
+2025-11-24 19:38:40,938 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 19:38:51,162 - INFO - read_parquet: 10.2 seconds, rows=2,964,624
+2025-11-24 19:38:51,210 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 19:39:57,377 - INFO -   COPY into raw_stage: 25.1 seconds
+2025-11-24 19:39:57,488 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 19:40:18,855 - INFO -   Procedure runtime (including SQL work): 21.4 seconds
+2025-11-24 19:40:18,856 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 97.9 seconds
+2025-11-24 19:40:19,156 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 19:40:29,018 - INFO - read_parquet: 9.9 seconds, rows=3,007,526
+2025-11-24 19:40:29,155 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 19:41:37,032 - INFO -   COPY into raw_stage: 25.0 seconds
+2025-11-24 19:41:37,038 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 19:41:57,752 - INFO -   Procedure runtime (including SQL work): 20.7 seconds
+2025-11-24 19:41:57,753 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 98.6 seconds
+2025-11-24 19:41:58,066 - INFO - All done.
+2025-11-24 19:46:43,115 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 19:46:53,574 - INFO - read_parquet: 10.5 seconds, rows=2,964,624
+2025-11-24 19:46:53,611 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 19:48:16,641 - INFO -   COPY into raw_stage: 31.7 seconds
+2025-11-24 19:48:16,699 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 19:48:21,500 - INFO -   Procedure runtime (including SQL work): 4.8 seconds
+2025-11-24 19:48:21,501 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 98.4 seconds
+2025-11-24 19:48:21,813 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 19:49:18,141 - INFO - read_parquet: 56.3 seconds, rows=3,007,526
+2025-11-24 19:49:18,187 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 19:50:42,239 - INFO -   COPY into raw_stage: 33.7 seconds
+2025-11-24 19:50:42,251 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 19:50:47,151 - INFO -   Procedure runtime (including SQL work): 4.9 seconds
+2025-11-24 19:50:47,152 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 145.3 seconds
+2025-11-24 19:50:47,554 - INFO - All done.
+2025-11-24 19:57:50,861 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 19:57:59,700 - INFO - read_parquet: 8.8 seconds, rows=2,964,624
+2025-11-24 19:57:59,751 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 19:59:15,882 - INFO -   COPY into raw_stage: 26.4 seconds
+2025-11-24 19:59:15,973 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 19:59:20,715 - INFO -   Procedure runtime (including SQL work): 4.7 seconds
+2025-11-24 19:59:20,718 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 89.9 seconds
+2025-11-24 19:59:20,978 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 19:59:30,452 - INFO - read_parquet: 9.5 seconds, rows=3,007,526
+2025-11-24 19:59:30,583 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 20:00:40,336 - INFO -   COPY into raw_stage: 26.3 seconds
+2025-11-24 20:00:40,345 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 20:00:45,315 - INFO -   Procedure runtime (including SQL work): 5.0 seconds
+2025-11-24 20:00:45,315 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 84.3 seconds
+2025-11-24 20:00:45,680 - INFO - All done.
+2025-11-24 21:24:13,482 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 21:24:23,631 - INFO - read_parquet: 10.1 seconds, rows=2,964,624
+2025-11-24 21:24:23,703 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 21:25:49,948 - INFO -   COPY into raw_stage: 32.9 seconds
+2025-11-24 21:25:50,032 - ERROR - ❌ Error during Ingestion: 'NoneType' object has no attribute 'format'
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\incremental_ingestion.py", line 64, in incremental_data_ingestion
+    t1 = time.perf_counter()
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\incremental_ingestion.py", line 25, in load_procedure
+    dynamically
+AttributeError: 'NoneType' object has no attribute 'format'
+2025-11-24 21:25:50,061 - INFO - All done.
+2025-11-24 21:28:02,083 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 21:28:09,875 - INFO - read_parquet: 7.8 seconds, rows=2,964,624
+2025-11-24 21:28:09,889 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 21:29:23,850 - INFO -   COPY into raw_stage: 25.6 seconds
+2025-11-24 21:29:23,864 - ERROR - ❌ Error during Ingestion: 'WindowsPath' object has no attribute 'format'
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\incremental_ingestion.py", line 67, in incremental_data_ingestion
+    load_procedure(cur, year, month)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\incremental_ingestion.py", line 27, in load_procedure
+    prcd = get_sql_file_text('bronze_incremental_load.sql').format(f'{year}-{month:02}-01 00:00:00')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'WindowsPath' object has no attribute 'format'
+2025-11-24 21:29:23,895 - INFO - All done.
+2025-11-24 21:37:35,153 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 21:37:47,206 - INFO - read_parquet: 12.1 seconds, rows=2,964,624
+2025-11-24 21:37:47,236 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 21:39:05,629 - INFO -   COPY into raw_stage: 35.3 seconds
+2025-11-24 21:39:05,724 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 21:39:05,795 - ERROR - ❌ Error during Ingestion: function date_trunc(timestamp without time zone, timestamp without time zone) does not exist
+LINE 1: SELECT DATE_TRUNC(TIMESTAMP '2024-01-01 00:00:00', m_lld + I...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+QUERY:  SELECT DATE_TRUNC(TIMESTAMP '2024-01-01 00:00:00', m_lld + INTERVAL '1 day')
+CONTEXT:  PL/pgSQL function bronze.incremental_load() line 20 at SQL statement
+Traceback (most recent call last):
+  File "C:\Users\ajibade.adeleke\Desktop\python_nyc_taxi_etl\src\incremental_ingestion.py", line 72, in incremental_data_ingestion
+    cur.execute("CALL bronze.incremental_load();")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedFunction: function date_trunc(timestamp without time zone, timestamp without time zone) does not exist
+LINE 1: SELECT DATE_TRUNC(TIMESTAMP '2024-01-01 00:00:00', m_lld + I...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+QUERY:  SELECT DATE_TRUNC(TIMESTAMP '2024-01-01 00:00:00', m_lld + INTERVAL '1 day')
+CONTEXT:  PL/pgSQL function bronze.incremental_load() line 20 at SQL statement
+
+2025-11-24 21:39:05,799 - INFO - All done.
+2025-11-24 21:42:45,119 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 21:43:44,675 - INFO - read_parquet: 59.6 seconds, rows=2,964,624
+2025-11-24 21:43:44,715 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 21:44:53,515 - INFO -   COPY into raw_stage: 25.4 seconds
+2025-11-24 21:44:53,594 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 21:45:13,551 - INFO -   Procedure runtime (including SQL work): 20.0 seconds
+2025-11-24 21:45:13,551 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 148.4 seconds
+2025-11-24 21:45:13,822 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 21:45:24,671 - INFO - read_parquet: 10.8 seconds, rows=3,007,526
+2025-11-24 21:45:24,799 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 21:46:40,982 - INFO -   COPY into raw_stage: 27.2 seconds
+2025-11-24 21:46:40,987 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 21:47:05,897 - INFO -   Procedure runtime (including SQL work): 24.9 seconds
+2025-11-24 21:47:05,897 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 112.1 seconds
+2025-11-24 21:47:06,309 - INFO - All done.
+2025-11-24 21:49:57,148 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 21:50:10,352 - INFO - read_parquet: 13.2 seconds, rows=2,964,624
+2025-11-24 21:50:10,399 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 21:51:20,154 - INFO -   COPY into raw_stage: 24.8 seconds
+2025-11-24 21:51:20,199 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 21:51:24,835 - INFO -   Procedure runtime (including SQL work): 4.6 seconds
+2025-11-24 21:51:24,835 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 87.7 seconds
+2025-11-24 21:51:25,158 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 21:52:16,126 - INFO - read_parquet: 51.0 seconds, rows=3,007,526
+2025-11-24 21:52:16,173 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 21:53:40,867 - INFO -   COPY into raw_stage: 31.0 seconds
+2025-11-24 21:53:40,893 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 21:53:48,007 - INFO -   Procedure runtime (including SQL work): 7.1 seconds
+2025-11-24 21:53:48,007 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 142.8 seconds
+2025-11-24 21:53:48,673 - INFO - All done.
+2025-11-24 21:55:38,663 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 21:56:38,962 - INFO - read_parquet: 60.3 seconds, rows=2,964,624
+2025-11-24 21:56:38,977 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 21:57:47,955 - INFO -   COPY into raw_stage: 25.9 seconds
+2025-11-24 21:57:48,021 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 21:57:52,504 - INFO -   Procedure runtime (including SQL work): 4.5 seconds
+2025-11-24 21:57:52,505 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 133.8 seconds
+2025-11-24 21:57:52,784 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 21:58:32,329 - INFO - read_parquet: 39.5 seconds, rows=3,007,526
+2025-11-24 21:58:32,427 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 22:00:03,145 - INFO -   COPY into raw_stage: 46.6 seconds
+2025-11-24 22:00:03,161 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 22:00:08,582 - INFO -   Procedure runtime (including SQL work): 5.4 seconds
+2025-11-24 22:00:08,582 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 135.8 seconds
+2025-11-24 22:00:08,999 - INFO - All done.
+2025-11-24 22:15:40,302 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
+2025-11-24 22:17:10,198 - INFO - read_parquet: 89.9 seconds, rows=2,964,624
+2025-11-24 22:17:10,313 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 22:18:22,243 - INFO -   COPY into raw_stage: 25.1 seconds
+2025-11-24 22:18:22,358 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 22:18:43,140 - INFO -   Procedure runtime (including SQL work): 20.8 seconds
+2025-11-24 22:18:43,141 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-01
+                    Total Ingestion runtime: 182.8 seconds
+2025-11-24 22:18:43,569 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet
+2025-11-24 22:19:10,222 - INFO - read_parquet: 26.7 seconds, rows=3,007,526
+2025-11-24 22:19:10,347 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 22:20:27,983 - INFO -   COPY into raw_stage: 30.9 seconds
+2025-11-24 22:20:28,004 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 22:20:44,713 - INFO -   Procedure runtime (including SQL work): 16.7 seconds
+2025-11-24 22:20:44,714 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-02
+                    Total Ingestion runtime: 121.1 seconds
+2025-11-24 22:20:44,987 - INFO - Downloading and loading https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-03.parquet
+2025-11-24 22:21:16,238 - INFO - read_parquet: 31.3 seconds, rows=3,582,628
+2025-11-24 22:21:16,338 - INFO -   Copying DataFrame to raw_stage via COPY ...
+2025-11-24 22:22:59,109 - INFO -   COPY into raw_stage: 35.2 seconds
+2025-11-24 22:22:59,128 - INFO -   Calling bronze.incremental_load() ...
+2025-11-24 22:23:24,630 - INFO -   Procedure runtime (including SQL work): 25.5 seconds
+2025-11-24 22:23:24,630 - INFO - ✅✅✅ Finished Incremental Ingestion for 2024-03
+                    Total Ingestion runtime: 159.6 seconds
+2025-11-24 22:23:24,969 - INFO - 📥Incrementally Ingested 3 periodic files
+2025-11-24 22:29:08,639 - INFO - ✅✅✅ SILVER layer transformation completed: raw Bronze trips normalized into relational tables.
+                    derived features calculated, and values standardized for downstream Gold models.
+                    
+2025-11-24 22:29:08,719 - INFO - ✅✅✅ Aggregation layer model completed.
+2025-11-24 22:29:08,722 - INFO - 🎊🎉🎊 Pipeline ran successfully for 808.4985640999512 seconds
