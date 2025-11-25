@@ -99,10 +99,10 @@ if __name__ == '__main__':
             for month in range(1, 3):
                 incremental_data_ingestion(year, month, incr_cur)
 
+        finally:
             incr_cur.execute('SELECT * FROM meta.metadata_table')
             df = pd.DataFrame(incr_cur.fetchall())
             print(df)
-        finally:
             incr_cur.close()
             admin_conn.close()
             logger.info("All done.")

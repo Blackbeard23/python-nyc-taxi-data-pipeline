@@ -19,7 +19,7 @@ BEGIN
   INTO m_lld
   FROM meta.metadata_table;
 
-  SELECT DATE_TRUNC('month', TIMESTAMP '{}') INTO month_start;
+  SELECT DATE_TRUNC(TIMESTAMP '{}') INTO month_start;
 
   SELECT month_start + INTERVAL '1 month' INTO month_end;
   
@@ -70,11 +70,11 @@ BEGIN
   VALUES (m_lld, 'success', execution_duration, NULL); --error message is NULL for success status
 
 EXCEPTION WHEN OTHERS THEN
-  GET STACKED DIAGNOSTICS error_message := MESSAGE_TEXT;
+  GET STACKED DIAGNOSTICS error_message = MESSAGE_TEXT;
   end_time := clock_timestamp();
   execution_duration := end_time - start_time;
   INSERT INTO meta.metadata_table(last_load_date, status, runtime, error_message)
   VALUES (m_lld, 'failed', execution_duration, error_message);
-  RAISE;
+  -- RAISE;
 END;
 $$;
