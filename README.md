@@ -8,7 +8,7 @@
 - [Repository Structure](#repository-structure)
 - [Pipeline Flow and Logic](#pipeline-flow-and-logic)
 - [Reproducing the Project](#reproducing-the-project)
-- [Testing & Validation](#testing-and-validation)
+- [Testing & Validation](#testing--validation)
 
 ---
 
