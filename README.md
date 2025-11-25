@@ -271,4 +271,9 @@ Check the logs:
 for a detailed trace of each step.
 
 ---
+## Testing & Validation
+
+![metadata table error message test](image/metadata_error_msg.png)
+
+The image above shows how `meta.metadata_table` captures each incremental load, including status, runtime, and error messages when the `plpgsql` procedure fails during ingestion into the semi-raw (Bronze) layer.
 
