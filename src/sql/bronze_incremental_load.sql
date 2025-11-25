@@ -19,7 +19,7 @@ BEGIN
   INTO m_lld
   FROM meta.metadata_table;
 
-  SELECT DATE_TRUNC(TIMESTAMP '{}') INTO month_start;
+  SELECT DATE_TRUNC('month', TIMESTAMP '{}') INTO month_start;
 
   SELECT month_start + INTERVAL '1 month' INTO month_end;
   
