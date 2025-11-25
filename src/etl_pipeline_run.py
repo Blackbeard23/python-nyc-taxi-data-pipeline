@@ -18,7 +18,7 @@ try:
 
     for month in range(month_start, month_end + 1):
         incremental_data_ingestion(year, month, admin_cur)
-    logger.info(f'📥Incrementally Ingested {month_end} periodic files')
+    logger.info(f'📥 Incrementally Ingested {month_end} periodic files')
 
     run_silver_layer(admin_cur)
 
