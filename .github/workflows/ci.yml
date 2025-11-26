@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: '**' # matches any branch
   pull_request:
     branches: [ master ]
 
@@ -15,24 +15,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Set up Python
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
+      # # 2. Set up Python
+      # - name: Set up Python
+      #   uses: actions/setup-python@v5
+      #   with:
+      #     python-version: "3.13"
 
       # 3. Install dependencies
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       # 4. Run flake8 (linting)
       - name: Run flake8
-        run: |
-          flake8
+        run: flake8
 
       # 5. Run pytest (unit tests)
       - name: Run pytest
-        run: |
-          pytest
+        run: pytest
