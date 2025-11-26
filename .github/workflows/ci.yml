@@ -11,24 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repo code
+      # Checkout repo code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # # 2. Set up Python
-      # - name: Set up Python
-      #   uses: actions/setup-python@v5
-      #   with:
-      #     python-version: "3.13"
-
-      # 3. Install dependencies
+      # Install dependencies
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # 4. Run flake8 (linting)
+      # Run flake8 (linting)
       - name: Run flake8
         run: flake8
 
-      # 5. Run pytest (unit tests)
+      # Run pytest (unit tests)
       - name: Run pytest
         run: pytest
