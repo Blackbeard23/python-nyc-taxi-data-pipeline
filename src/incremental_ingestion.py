@@ -2,6 +2,7 @@ import pandas as pd
 from utils import db_connection, custom_logging, get_sql_file_text
 import time
 import io
+import psycopg2
 
 # terminate_db_connections()
 
@@ -20,7 +21,8 @@ def download_url_template(year: int, month: int) -> str:
     return download_url.format(year=year, month=month)
 
 
-def load_procedure(cur, year: int, month: int) -> None:
+def load_procedure(cur: psycopg2.extensions.cursor,
+                   year: int, month: int) -> None:
     """ This runs the incremental procedure query and also
         dynamically get each periodic window (start and end day)
     """
@@ -29,7 +31,9 @@ def load_procedure(cur, year: int, month: int) -> None:
     cur.execute(sql_query)
 
 
-def incremental_data_ingestion(year: int, month: int, cur) -> None:
+def incremental_data_ingestion(year: int,
+                               month: int,
+                               cur: psycopg2.extensions.cursor) -> None:
     """Download one month's parquet, load into raw_stage, and call incremental proc.
     """
     # terminate_db_connections()

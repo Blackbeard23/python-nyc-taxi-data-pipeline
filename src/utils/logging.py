@@ -2,7 +2,7 @@ import logging
 import os
 
 
-def custom_logging(log_file: str):
+def custom_logging(log_file: str) -> logging.Logger:
     """ Custom logging to a file and console
     """
     logger = logging.getLogger(__name__)

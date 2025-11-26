@@ -1,9 +1,10 @@
 from utils import custom_logging, get_sql_file_text, run_sql_file, db_connection
+import psycopg2
 
 logger = custom_logging('logs/pipeline.log')
 
 
-def run_silver_layer(admin_cur):
+def run_silver_layer(admin_cur: psycopg2.extensions.cursor) -> None:
     try:
         # silver_conn = db_connection()
 
@@ -24,7 +25,7 @@ def run_silver_layer(admin_cur):
         # silver_conn.close()
 
 
-def run_gold_layer(admin_cur):
+def run_gold_layer(admin_cur: psycopg2.extensions.cursor) -> None:
     try:
 
         gold_path = get_sql_file_text('gold_aggregate_layer.sql')
