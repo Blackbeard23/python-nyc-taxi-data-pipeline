@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: '**' # matches any branch
   pull_request:
     branches: [ master ]
 
