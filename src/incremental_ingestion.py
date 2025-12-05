@@ -4,20 +4,11 @@ import time
 import io
 import psycopg2
 
-# terminate_db_connections()
-
-logger = custom_logging('logs/pipeline.log')
-
-year = 2024
-# # out_dir = Path.cwd() / "data"
-# out_dir.mkdir(parents=True, exist_ok=True)
-
-download_url = "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_{year}-{month:02d}.parquet"
-
 
 def download_url_template(year: int, month: int) -> str:
     """url for pytest
     """
+    download_url: str = "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_{year}-{month:02d}.parquet"
     return download_url.format(year=year, month=month)
 
 
@@ -37,11 +28,13 @@ def incremental_data_ingestion(year: int,
     """Download one month's parquet, load into raw_stage, and call incremental proc.
     """
     # terminate_db_connections()
-    url = download_url.format(year=year, month=month)
+    logger = custom_logging('logs/pipeline.log')
+
+    url = download_url_template(year=year, month=month)
     logger.info(f"Downloading and loading {url}")
     t4 = time.perf_counter()
 
-    # 1) Download parquet into DataFrame
+    # Download parquet into DataFrame
     df = pd.read_parquet(url, engine="pyarrow")
     t5 = time.perf_counter()
     logger.info(f'read_parquet: {t5 - t4:,.1f} seconds, rows={df.shape[0]:,}')
@@ -65,7 +58,8 @@ def incremental_data_ingestion(year: int,
             """,
             buffer,
         )
-
+        # close buffer
+        buffer.close()
         t1 = time.perf_counter()
         logger.info(f"  COPY into raw_stage: {t1 - t0:,.1f} seconds")
 
@@ -86,9 +80,6 @@ def incremental_data_ingestion(year: int,
         logger.info(f"""✅✅✅ Finished Incremental Ingestion for {year}-{month:02d}
                     Total Ingestion runtime: {t6 - t4:,.1f} seconds""")
 
-    # finally:
-    #     cur.close()
-
 
 if __name__ == '__main__':
 
@@ -100,8 +91,8 @@ if __name__ == '__main__':
             #                     TRUNCATE meta.metadata_table;
             #                     TRUNCATE meta.invalid_records;
             #                  """)
-            for month in range(1, 3):
-                incremental_data_ingestion(year, month, incr_cur)
+            for month in range(1, 10):
+                incremental_data_ingestion(2024, month, incr_cur)
 
         finally:
             incr_cur.execute('SELECT * FROM meta.metadata_table')
@@ -109,6 +100,6 @@ if __name__ == '__main__':
             print(df)
             incr_cur.close()
             admin_conn.close()
-            logger.info("All done.")
+            print("All done.")
 
     main()
