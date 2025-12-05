@@ -1,10 +1,12 @@
 import os
 from pathlib import Path
+import pathlib
 from dotenv import load_dotenv
 import psycopg2
+from typing import Tuple
 
 
-def db_credentials():
+def db_credentials() -> Tuple[str]:
     """Helper function for database credentials
     """
     load_dotenv()
@@ -22,7 +24,7 @@ def db_credentials():
     return host, user, port, password, db_name
 
 
-def db_connection():
+def db_connection() -> psycopg2.extensions.connection:
     """ create database connection.
     """
     host, user, port, password, db_name = db_credentials()
@@ -42,7 +44,7 @@ def db_connection():
     return conn
 
 
-def terminate_db_connections():
+def terminate_db_connections() -> None:
     """
     Kill all other connections to `dbname` so we can DROP DATABASE.
     Connects to the 'postgres' maintenance DB to do it.
@@ -73,7 +75,7 @@ def terminate_db_connections():
     conn.close()
 
 
-def get_sql_file_text(file_name: str) -> Path:
+def get_sql_file_text(file_name: str) -> pathlib.WindowsPath:
     """convert .sql file to readable text file
         to execute as sql statement
     """
@@ -82,8 +84,8 @@ def get_sql_file_text(file_name: str) -> Path:
     return sql_path
 
 
-def run_sql_file(path: Path, cursor):
+def run_sql_file(path: Path, cursor) -> None:
     """ Helps to run .sql file
     """
-    sql_text = path.read_text(encoding='utf-8')
+    sql_text: str = path.read_text(encoding='utf-8')
     cursor.execute(sql_text)

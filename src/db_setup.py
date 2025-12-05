@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import psycopg2
 from utils import custom_logging
 from utils import terminate_db_connections
+from typing import Optional, Tuple
 
 # Logging setup
 logger = custom_logging('logs/db_setup.log')
@@ -23,7 +24,12 @@ db_name = os.getenv("DBNAME").lower()
 terminate_db_connections()
 
 
-def database_connection(host, port, user, password, db=None):
+def database_connection(host: str,
+                        port: str,
+                        user: str,
+                        password: str,
+                        db: Optional[str] = None
+                        ) -> Tuple[psycopg2.extensions.connection, psycopg2.extensions.cursor]:
     """
     Simple psycopg2 connection used for DDL and DB create/drop.
     If db is None, connects to the default database (usually 'postgres').
