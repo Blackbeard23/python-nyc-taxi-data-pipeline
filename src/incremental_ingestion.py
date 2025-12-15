@@ -2,16 +2,13 @@ import pandas as pd
 from utils import db_connection, custom_logging, get_sql_file_text
 import time
 import io
-import os
-from dotenv import load_dotenv
 import psycopg2
 
 
 def download_url_template(year: int, month: int) -> str:
     """url for pytest
     """
-    load_dotenv()
-    download_url: str = os.getenv('URL')
+    download_url: str = "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_{year}-{month:02d}.parquet"
     return download_url.format(year=year, month=month)
 
 
